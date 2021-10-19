@@ -1,4 +1,4 @@
-# kafka-demo Project with openshift pipelines quarkus native build
+# kafka-demo project with openshift pipelines quarkus native build and GitOps
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
@@ -8,7 +8,7 @@ If you want to learn more about Quarkus, please visit its website: https://quark
 
 To build a ubi based quarkus native image follow these instructions:
 
-1. install the `Red Hat OpenShift Pipelines` Operator
+1. install the `Red Hat OpenShift Pipelines` [Operator](https://cloud.redhat.com/learn/topics/ci-cd)
 2. apply the Pipeline: `oc apply -f src/main/pipeline/pipeline.yaml`
 3. build your quarkus native image 
 ```
