@@ -32,6 +32,10 @@ To deploy the image apply the following resources:
 - `src/main/openshift/route.yaml`
 - `src/main/openshift/service.yaml`
 
+## CI/CD with Red Hat OpenShift GitOps Operator
+
+*comming soon*
+
 ## Local Development
 ### Running the application in dev mode
 
