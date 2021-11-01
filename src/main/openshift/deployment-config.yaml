@@ -21,13 +21,13 @@ spec:
             - name: kafka-bootstrap-servers
               valueFrom:
                 secretKeyRef:
-                  key: kafka-config
-                  name: kafka.bootstrap.servers
+                  key: kafka.bootstrap.servers
+                  name: kafka-config
             - name: kafka-sasl-jaas-config
               valueFrom:
                 secretKeyRef:
-                  key: demo-user
-                  name: sasl.jaas.config
+                  key: sasl.jaas.config
+                  name: demo-user
       restartPolicy: Always
   triggers:
     - type: ConfigChange

@@ -7,7 +7,7 @@ import javax.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class DemoConsumer {
 
-    @Incoming("demo-topic")
+    @Incoming("demo-topic-in")
     public void consume(String message) {
         System.out.println(message);
     }

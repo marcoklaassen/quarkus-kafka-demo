@@ -12,7 +12,7 @@ public class DemoProducer {
 
     private final Random random = new Random();
 
-    @Outgoing("demo-topic")
+    @Outgoing("demo-topic-out")
     public Multi<String> generate() {
         // Build an infinite stream of random prices
         // It emits a price every second
