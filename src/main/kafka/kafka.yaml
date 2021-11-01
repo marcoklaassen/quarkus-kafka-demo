@@ -1,7 +1,7 @@
 apiVersion: kafka.strimzi.io/v1beta2
 kind: Kafka
 metadata:
-  namespace: openshift-operators
+  namespace: kafka
   name: demo-cluster
 spec:
   kafka:
@@ -22,10 +22,14 @@ spec:
         port: 9092
         type: internal
         tls: false
+        authentication:
+          type: scram-sha-512
       - name: tls
         port: 9093
         type: internal
         tls: true
+        authentication:
+          type: scram-sha-512
   entityOperator:
     topicOperator:
       watchedNamespace: "kafka"

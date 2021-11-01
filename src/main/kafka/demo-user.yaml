@@ -23,12 +23,6 @@ spec:
         operation: Describe
         host: '*'
       - resource:
-          type: group
-          name: my-group
-          patternType: literal
-        operation: Read
-        host: '*'
-      - resource:
           type: topic
           name: demo-topic
           patternType: literal
@@ -41,9 +35,27 @@ spec:
         operation: Create
         host: '*'
       - resource:
-          type: topic
-          name: demo-topic
+          type: group
+          name: kafka-demo
+          patternType: literal
+        operation: Read
+        host: '*'
+      - resource:
+          type: group
+          name: kafka-demo
+          patternType: literal
+        operation: Write
+        host: '*'
+      - resource:
+          type: group
+          name: kafka-demo
           patternType: literal
         operation: Describe
+        host: '*'
+      - resource:
+          type: group
+          name: kafka-demo
+          patternType: literal
+        operation: Create
         host: '*'
     type: simple
