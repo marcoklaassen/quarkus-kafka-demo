@@ -51,7 +51,6 @@ spec:
             resources:
               requests:
                 memory: 8Gi
-                cpu: 600m
             image: quay.io/quarkus/ubi-quarkus-native-image:21.2.0-java11
             workingDir: /workspace/source
             command: ["./mvnw", "package", "-Pnative"]
