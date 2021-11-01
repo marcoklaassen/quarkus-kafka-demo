@@ -1,0 +1,49 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaUser
+metadata:
+  name: demo-user
+  labels:
+    strimzi.io/cluster: demo-cluster
+  namespace: kafka
+spec:
+  authentication:
+    type: scram-sha-512
+  authorization:
+    acls:
+      - resource:
+          type: topic
+          name: demo-topic
+          patternType: literal
+        operation: Read
+        host: '*'
+      - resource:
+          type: topic
+          name: demo-topic
+          patternType: literal
+        operation: Describe
+        host: '*'
+      - resource:
+          type: group
+          name: my-group
+          patternType: literal
+        operation: Read
+        host: '*'
+      - resource:
+          type: topic
+          name: demo-topic
+          patternType: literal
+        operation: Write
+        host: '*'
+      - resource:
+          type: topic
+          name: demo-topic
+          patternType: literal
+        operation: Create
+        host: '*'
+      - resource:
+          type: topic
+          name: demo-topic
+          patternType: literal
+        operation: Describe
+        host: '*'
+    type: simple

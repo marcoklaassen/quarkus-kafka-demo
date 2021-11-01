@@ -17,6 +17,27 @@ spec:
           ports:
             - containerPort: 8080
               protocol: TCP
+          env:
+            - name: kafka-bootstrap-servers
+              valueFrom:
+                secretKeyRef:
+                  key: kafka-config
+                  name: kafka.bootstrap.servers
+            - name: kafka-security-protocol
+              valueFrom:
+                secretKeyRef:
+                  key: kafka-config
+                  name: kafka.security.protocol
+            - name: kafka-sasl-mechanism
+              valueFrom:
+                secretKeyRef:
+                  key: kafka-config
+                  name: kafka.sasl.mechanism
+            - name: kafka-sasl-jaas-config
+              valueFrom:
+                secretKeyRef:
+                  key: demo-user
+                  name: sasl.jaas.config
       restartPolicy: Always
   triggers:
     - type: ConfigChange
