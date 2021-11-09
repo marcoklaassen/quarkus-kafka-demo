@@ -1,10 +1,10 @@
-# kafka-demo project with openshift pipelines quarkus native build and GitOps
+# kafka-demo project with OpenShift pipelines quarkus native build and GitOps
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
-## Build with Open Shift Pipelines
+## Build with OpenShift Pipelines
 
 To build a ubi based quarkus native image follow these instructions:
 
@@ -24,7 +24,7 @@ NAME                        IMAGE REPOSITORY                                    
 quarkus-kafka-demo-native   image-registry.openshift-image-registry.svc:5000/kafka/quarkus-kafka-demo-native   latest   6 hours ago
 ```
 
-## Deploy it on Open Shift
+## Deploy it on OpenShift
 
 To deploy the image apply the following resources:
 
