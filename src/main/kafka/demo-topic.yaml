@@ -4,7 +4,7 @@ metadata:
   name: demo-topic
   labels:
     strimzi.io/cluster: demo-cluster
-  namespace: kafka
+  namespace: kafka-demo
 spec:
   config:
     retention.ms: 604800000

@@ -12,17 +12,26 @@ To build a ubi based quarkus native image follow these instructions:
 2. apply the Pipeline: `oc apply -f src/main/pipeline/pipeline.yaml`
 3. build your quarkus native image 
 ```
-tkn pipeline start kafka-demo-pipeline \                                                                                                                          ✘ INT at  16:22:50
+tkn pipeline start kafka-demo-pipeline \
 -w name=shared-workspace,volumeClaimTemplateFile=src/main/pipeline/pipeline-pvc.yaml \
 -p git-url=$(your-git-repo) \
--p IMAGE=image-registry.openshift-image-registry.svc:5000/kafka/quarkus-kafka-demo-native \
+-p IMAGE=image-registry.openshift-image-registry.svc:5000/kafka-demo/quarkus-kafka-demo-native \
 --use-param-defaults
 ```
 4. check your image stream with `oc get is` should output something like this
 ```
-NAME                        IMAGE REPOSITORY                                                                   TAGS     UPDATED
-quarkus-kafka-demo-native   image-registry.openshift-image-registry.svc:5000/kafka/quarkus-kafka-demo-native   latest   6 hours ago
+NAME                        IMAGE REPOSITORY                                                                        TAGS     UPDATED
+quarkus-kafka-demo-native   image-registry.openshift-image-registry.svc:5000/kafka-demo/quarkus-kafka-demo-native   latest   6 hours ago
 ```
+
+## Preparte AMQ Streams Kafka Environment
+
+To deploy the kafka cluster with topic and user apply the following resources: 
+
+- The kafka cluster: `src/main/kafka/kafka.yaml`
+- The topic: `src/main/kafka/demo-topic.yaml`
+- The user: `src/main/kafka/demo-user.yaml`
+- The secret with information for the application where to find our kafka bootstrap server: `src/main/kafka/secret.yaml`
 
 ## Deploy it on OpenShift
 

@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   name: kafka-demo-pipeline
-  namespace: kafka
+  namespace: kafka-demo
 spec:
   workspaces:
     - name: shared-workspace
@@ -44,7 +44,6 @@ spec:
       taskSpec:
         workspaces:
           - name: source
-            workspace:
             description: the source code
         steps:
           - name: build-executable
